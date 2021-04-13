@@ -18,11 +18,11 @@
         />
 
     <EditText
-        android:id="@+id/editTextUserId"
+        android:id="@+id/editTextEmployeeId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="User Id"
+        android:hint="Employee Id"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -30,16 +30,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextUserName"
+        android:id="@+id/editTextEmployeeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="User name"
+        android:hint="Employee name"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUserId" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmployeeId" />
 
     <Button
         android:id="@+id/buttonSubmit"
@@ -49,6 +49,6 @@
         android:text="Submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUserName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmployeeName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

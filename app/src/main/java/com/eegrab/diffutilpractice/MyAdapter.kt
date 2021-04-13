@@ -2,6 +2,7 @@ package com.eegrab.diffutilpractice
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.eegrab.diffutilpractice.databinding.FragmentFirstBinding
 import com.eegrab.diffutilpractice.databinding.RecyclerItemLayoutBinding
@@ -32,5 +33,12 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     override fun getItemCount(): Int {
         return oldEmployeeList.size
+    }
+
+    fun setData(newEmployeeList: List<Employee>) {
+        val diffUtil = MyDiffUtil(oldEmployeeList, newEmployeeList)
+        val diffResult = DiffUtil.calculateDiff(diffUtil)
+        oldEmployeeList = newEmployeeList
+        diffResult.dispatchUpdatesTo(this)
     }
 }
