@@ -1,6 +1,7 @@
 package com.eegrab.diffutilpractice
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,8 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
     private val myAdapter by lazy { MyAdapter() }
     private lateinit var binding: FragmentFirstBinding
     var employeeList = mutableListOf<Employee>()
+
+    val TAG = "Main"
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,8 +32,9 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
             var employee_id = binding.editTextEmployeeId.text.toString().trim()
 
             employeeList.add(Employee(employee_id,employee_name))
-
-            myAdapter.setData(employeeList)
+            Log.d(TAG, "list is $employeeList")
+            val listEmployee = employeeList.toList()
+            myAdapter.setData(listEmployee)
         }
     }
 }

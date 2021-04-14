@@ -1,5 +1,6 @@
 package com.eegrab.diffutilpractice
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -10,6 +11,7 @@ import com.eegrab.diffutilpractice.databinding.RecyclerItemLayoutBinding
 class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     private var oldEmployeeList = emptyList<Employee>()
+    val TAG = "Main"
 
     class MyViewHolder(val binding: RecyclerItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -36,6 +38,7 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
     }
 
     fun setData(newEmployeeList: List<Employee>) {
+        Log.d(TAG, "setData: is called")
         val diffUtil = MyDiffUtil(oldEmployeeList, newEmployeeList)
         val diffResult = DiffUtil.calculateDiff(diffUtil)
         oldEmployeeList = newEmployeeList

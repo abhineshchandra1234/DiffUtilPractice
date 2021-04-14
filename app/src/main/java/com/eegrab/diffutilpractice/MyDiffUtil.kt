@@ -19,7 +19,16 @@ class MyDiffUtil (
     }
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldList == newList
+        return when {
+            oldList[oldItemPosition].employee_id != newList[newItemPosition].employee_id -> {
+                false
+            }
+            oldList[oldItemPosition].employee_name != newList[newItemPosition].employee_name -> {
+                false
+            }
+            else -> true
+        }
+//        return oldList == newList
     }
 
 }
