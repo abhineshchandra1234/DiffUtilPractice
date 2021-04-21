@@ -33,7 +33,7 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
 
             employeeList.add(Employee(employee_id,employee_name))
             Log.d(TAG, "list is $employeeList")
-            val listEmployee = employeeList.toList()
+            val listEmployee : List<Employee> = employeeList.toList()
             myAdapter.setData(listEmployee)
         }
     }
